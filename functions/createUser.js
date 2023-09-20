@@ -27,8 +27,8 @@ async function createUser(req, res) {
     newUser
       .save()
       .then((user) => {
-        console.log('User saved to the database: ' + user);
-        res.status(200).send(user);
+        console.log('User saved into the database: ' + user);
+        res.status(201).send(user);
         return 1;
       })
       .catch((error) => {

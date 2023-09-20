@@ -2,7 +2,7 @@ const User = require('../models/userModel');
 
 async function getAllUser(req, res) {
   try {
-    let result = await User.find({});
+    const result = await User.find({});
     res.status(200).send(result);
     return 1;
   } catch (error) {

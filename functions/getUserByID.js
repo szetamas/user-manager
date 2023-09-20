@@ -4,13 +4,13 @@ async function getUserByID(req, res) {
   try {
     const id = req.body.id;
     if (id === undefined || isNaN(id)) {
-      res.status(400).send('ID is missing or wrong');
+      res.status(400).send({ Error: 'ID is missing or wrong' });
       return -1;
     }
 
-    let result = await User.find({ id: id });
+    const result = await User.find({ id: id });
     if (result[0] === undefined) {
-      res.status(400).send('This user doesnt exist');
+      res.status(400).send({ Error: 'This user doesnt exist' });
       return -1;
     }
 

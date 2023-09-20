@@ -13,7 +13,7 @@ async function updateUserByID(req, res) {
       return -1;
     }
 
-    let result = await User.updateOne(
+    const result = await User.updateOne(
       { id: id },
       { username: username, email: email }
     );

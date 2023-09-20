@@ -8,7 +8,7 @@ async function deleteUserByID(req, res) {
       return -1;
     }
 
-    let result = await User.deleteOne({ id: id });
+    const result = await User.deleteOne({ id: id });
     if (result.deletedCount === 0) {
       res.status(400).send('This user doesnt exist');
       return -1;
